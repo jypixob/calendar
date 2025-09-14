@@ -1,8 +1,8 @@
 diff --git a/index.html b/index.html
-index e7744fa4facff07d69e93e1552ad7f526dbba0b0..5f2d153f177d96edaa1a88336ce1824a603ee58c 100644
+index e7744fa4facff07d69e93e1552ad7f526dbba0b0..521ae88577af35f0dc88c34828120993c8788d4e 100644
 --- a/index.html
 +++ b/index.html
-@@ -3,57 +3,94 @@
+@@ -3,57 +3,101 @@
  <head>
    <meta charset="UTF-8" />
    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no" />
@@ -68,6 +68,7 @@ index e7744fa4facff07d69e93e1552ad7f526dbba0b0..5f2d153f177d96edaa1a88336ce1824a
 +    </div>
    </div>
  
++<script src="https://telegram.org/js/telegram-web-app.js"></script>
  <script>
 -// ... Весь JS-код уже внутри <script> как в последней версии ...
 +  const overlay = document.getElementById('overlay');
@@ -75,6 +76,12 @@ index e7744fa4facff07d69e93e1552ad7f526dbba0b0..5f2d153f177d96edaa1a88336ce1824a
 +  const startBtn = document.getElementById('startBtn');
 +  const restartBtn = document.getElementById('restartBtn');
 +  const finalScore = document.getElementById('finalScore');
++
++  if (window.Telegram && window.Telegram.WebApp) {
++    const webApp = window.Telegram.WebApp;
++    webApp.ready();
++    webApp.expand();
++  }
 +
 +  startBtn.addEventListener('click', () => {
 +    overlay.style.display = 'none';
