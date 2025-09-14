@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no" />
+  <title>Офисный ниндзя</title>
+  <link rel="preload" as="image" href="images/start.svg">
+  <link rel="preload" as="image" href="images/end.svg">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="wrap">
+    <canvas id="game" aria-label="Игровое поле" role="img"></canvas>
+
+    <div class="hud">
+      <div class="top">
+        <div class="pill" id="score">Score: 0</div>
+        <div class="pill" id="timer">00:30</div>
+      </div>
+      <div class="toast" id="toast" aria-live="polite">+1</div>
+      <div class="banner" id="banner" aria-live="polite"></div>
+      <div class="side">Fuck corp inc</div>
+    </div>
+
+    <!-- Стартовый экран -->
+    <div class="overlay" id="overlay">
+      <div class="card">
+        <img src="images/start.svg" alt="Стартовый экран" class="screen-image" id="startImage" />
+        <h1 class="title">Офисный ниндзя</h1>
+        <p class="subtitle">Избавь себя от бесполезных встреч — раскромсай их на кусочки и отправляйся домой</p>
+        <div class="btns">
+          <button class="btn" id="startBtn">Играть</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Финальный экран -->
+    <div class="overlay" id="endOverlay" style="display:none">
+      <div class="card">
+        <img src="images/end.svg" alt="Финальный экран" class="screen-image" id="endImage" />
+        <h1 class="title">Игра окончена</h1>
+        <p class="subtitle">Ваш счёт: <span id="finalScore">0</span></p>
+        <div class="btns">
+          <button class="btn" id="restartBtn">Играть снова</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Telegram Web App SDK -->
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+
+  <!-- Игра -->
+  <script type="module" src="game.js"></script>
+</body>
+</html>

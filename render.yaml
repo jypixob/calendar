@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: office-ninja-game
+    env: static
+    buildCommand: ""
+    staticPublishPath: .
