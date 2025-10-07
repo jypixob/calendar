@@ -1,0 +1,16 @@
+{
+  "name": "office-ninja-game",
+  "version": "1.0.0",
+  "description": "Офисный ниндзя - игра для Telegram Web App",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 8000",
+    "dev": "python -m http.server 8000"
+  },
+  "keywords": ["game", "telegram", "webapp", "ninja", "office"],
+  "author": "Office Ninja Team",
+  "license": "MIT",
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}

@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: office-ninja-game
+    env: static
+    buildCommand: ""
+    staticPublishPath: .
+    headers:
+      - path: /*
+        name: Cache-Control
+        value: "public, max-age=3600"
+      - path: /*.js
+        name: Cache-Control
+        value: "public, max-age=86400"
+      - path: /*.css
+        name: Cache-Control
+        value: "public, max-age=86400"
+      - path: /images/*
+        name: Cache-Control
+        value: "public, max-age=604800"

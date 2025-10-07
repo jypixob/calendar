@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  <title>Офисный ниндзя</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="wrap">
+    <canvas id="game"></canvas>
+
+    <div class="hud">
+      <div class="top">
+        <div class="pill" id="score">Уничтожено встреч: 0</div>
+        <div class="pill" id="timer">00:30</div>
+      </div>
+      <div class="toast" id="toast">+1</div>
+      <div class="banner" id="banner"></div>
+      <div class="side">Fuck corp inc</div>
+      <div class="author">@jypixob</div>
+    </div>
+
+    <div class="overlay" id="overlay">
+      <div class="overlay-content">
+        <h1 class="title">Офисный ниндзя</h1>
+        <p class="subtitle">Избавь себя от бесполезных встреч — раскромсай их на кусочки и отправляйся домой</p>
+        <div class="btns">
+          <button class="btn" id="startBtn">Играть</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Telegram Web App SDK -->
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+
+  <!-- Игра -->
+  <script src="game.js"></script>
+</body>
+</html>

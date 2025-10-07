@@ -1,0 +1,122 @@
+:root{ --ui:#1a73e8; --pill:#f1f3f4; --text:#202124; --line:#dadce0; --muted:#5f6368; }
+*{ box-sizing:border-box; }
+html,body{height:100%;margin:0;background:#fff;color:var(--text);font-family:Roboto,Arial,sans-serif;-webkit-tap-highlight-color:transparent}
+body{ user-select:none; -webkit-user-select:none; -webkit-touch-callout:none; }
+.wrap{position:relative;height:100%;overflow:hidden}
+canvas{display:block;width:100%;height:100%;touch-action:none;background:#fff}
+.hud{position:absolute;inset:0;pointer-events:none}
+.top{display:none} /* Скрываем старые элементы, так как они теперь в заголовке */
+.pill{background:var(--pill);padding:.35rem .6rem;border-radius:999px;font-weight:500;font-size:14px}
+.overlay{position:absolute;inset:0;display:flex;align-items:flex-end;justify-content:center;padding-bottom:60px;background-image:url('images/start.jpg?v=4');background-size:cover;background-position:center;background-repeat:no-repeat}
+.overlay.game-end{background-image:url('images/end.jpg?v=4')!important}
+.overlay-content{background:rgba(0,0,0,0.15);backdrop-filter:blur(12px);border-radius:16px;padding:32px 24px;max-width:90%;width:min(90%,420px);text-align:center;pointer-events:auto}
+.title{font-weight:700;font-size:26px;margin:0 0 .6rem;color:#ffffff;text-shadow:2px 2px 8px rgba(0,0,0,0.8)}
+.subtitle{color:#ffffff;margin:0 0 1.5rem;font-size:16px;text-shadow:1px 1px 4px rgba(0,0,0,0.8);line-height:1.5}
+.card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:22px;max-width:620px;width:min(92%,620px);text-align:center;box-shadow:0 2px 10px rgba(0,0,0,.08)}
+.btns{display:flex;gap:.75rem;justify-content:center}
+.btn{pointer-events:auto;cursor:pointer;background:var(--ui);color:#fff;border:none;border-radius:10px;padding:.7rem 1.1rem;font-weight:600;font-size:15px}
+.toast{position:absolute;left:50%;top:12%;transform:translateX(-50%);background:#202124;color:#fff;border-radius:8px;padding:.45rem .7rem;font-size:13px;pointer-events:none;opacity:0;transition:opacity .18s;box-shadow:0 8px 20px rgba(0,0,0,.15)}
+.toast.show{opacity:1}
+.side{position:absolute;right:6px;top:50%;transform:translateY(-50%) rotate(-90deg);transform-origin:right top;font-weight:700;font-size:12px;letter-spacing:.08em;color:#5f6368;pointer-events:none;opacity:.7}
+.overlay ~ .hud .side{display:none}
+.author{position:absolute;right:15px;bottom:3px;font-weight:500;font-size:8px;letter-spacing:.03em;color:#5f6368;pointer-events:none;opacity:.8}
+.banner{position:absolute;right:10px;top:20%;max-width:240px;background:#fff;border:2px solid var(--ui);border-radius:10px;padding:.6rem .8rem;font-size:13px;line-height:1.35;box-shadow:0 6px 18px rgba(0,0,0,.16);pointer-events:none;opacity:0;transition:opacity .2s}
+.banner.show{opacity:1}
+
+/* Мобильная оптимизация */
+@media (max-width: 768px) {
+  .banner {
+    right: 5px;
+    top: 15%;
+    max-width: 180px;
+    font-size: 12px;
+    padding: 0.5rem 0.6rem;
+  }
+  
+  .pill {
+    font-size: 13px;
+    padding: 0.4rem 0.7rem;
+  }
+  
+  .overlay {
+    padding-bottom: 40px;
+  }
+  
+  .overlay-content {
+    padding: 24px 20px;
+    max-width: 92%;
+    width: min(92%, 360px);
+  }
+  
+  .title {
+    font-size: 22px;
+  }
+  
+  .subtitle {
+    font-size: 14px;
+    margin: 0 0 1.2rem;
+  }
+  
+  .btn {
+    padding: 0.9rem 1.4rem;
+    font-size: 17px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 390px) {
+  .overlay {
+    padding-bottom: 30px;
+  }
+  
+  .overlay-content {
+    padding: 20px 16px;
+  }
+  
+  .title {
+    font-size: 20px;
+  }
+  
+  .subtitle {
+    font-size: 13px;
+  }
+  
+  .btn {
+    padding: 0.8rem 1.2rem;
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 900px){
+  .banner{top:18%}
+}
+
+/* Поддержка темной темы Telegram */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ui: #4a9eff;
+    --pill: #2d2d2d;
+    --text: #ffffff;
+    --line: #3c3c3c;
+    --muted: #8e8e93;
+  }
+  
+  body {
+    background: #000000;
+  }
+  
+  .card {
+    background: #1c1c1e;
+    border-color: var(--line);
+  }
+  
+  canvas {
+    background: #000000;
+  }
+  
+  .banner {
+    background: #1c1c1e;
+    color: #ffffff;
+    border-color: var(--ui);
+  }
+}
