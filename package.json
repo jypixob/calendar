@@ -1,16 +1,23 @@
 {
   "name": "office-ninja-game",
   "version": "1.0.0",
-  "description": "Офисный ниндзя - игра для Telegram Web App",
+  "description": "Офисный ниндзя - игра для Telegram Web App с интеграцией бота",
   "main": "index.html",
   "scripts": {
     "start": "python -m http.server 8000",
-    "dev": "python -m http.server 8000"
+    "dev": "python -m http.server 8000",
+    "bot": "python bot.py",
+    "bot:dev": "python bot.py"
   },
-  "keywords": ["game", "telegram", "webapp", "ninja", "office"],
-  "author": "Office Ninja Team",
+  "keywords": ["game", "telegram", "webapp", "ninja", "office", "bot", "miniapp"],
+  "author": "@jypixob",
   "license": "MIT",
   "engines": {
-    "node": ">=14.0.0"
+    "node": ">=14.0.0",
+    "python": ">=3.8.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/office-ninja-game"
   }
 }
